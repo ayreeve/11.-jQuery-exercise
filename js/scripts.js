@@ -6,24 +6,24 @@ var $span = $('span');
 $("span:even").css('color', 'red');
 
 //or: 
-/*span.each(function(index, element) {
-	if(index % 2 == 0) {
+/* $span.each(function(index, element) {
+	if(index % 2 == 1) {
 		$(element).css('color', 'red');
 	};
-});*/
+}); */
 
 
 // adding new elements
-var paragraphs = $('p');
-paragraphs.each(function (index, element) {
+var $paragraphs = $('p');
+$paragraphs.each(function (index, element) {
 
-    var button = '<button class="btn" data-tmp="' + index + '">Click me</button>'
-    $(element).append(button)
+    var $button = '<button class="btn" data-index="' + index + '">Click me</button>'
+    $(this).append($button)
 
 });
 
 
 // adding event handlers
 $("button").click(function () {
-    alert($(this).attr("data-tmp"));
+    alert($(this).attr("data-index"));
 });
